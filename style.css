@@ -1,0 +1,28 @@
+#validation-input {
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
+
+.js-lazy-load img {
+  width: 500px;
+  height: auto;
+  opacity: 0;
+  margin-bottom: 50px;
+  transform: translateX(-50%);
+  transition: ease 200ms;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.js-lazy-load img.show {
+  opacity: 1;
+  transform: translateX(0%);
+}
