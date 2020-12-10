@@ -7,6 +7,10 @@ containerRef.style.marginBottom = "50px";
 
 inputRef.addEventListener("input", onChangeInputValue);
 
-function onChangeInputValue(e) {
-  spanText.style.fontSize = e.target.value + "px";
+function onChangeInputValue(element) {
+  spanText.style.fontSize = element.target.value + "px";
 }
+
+/*
+ * REFACTORING: Замінив змінну івента з e на element
+ */

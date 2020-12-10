@@ -24,9 +24,9 @@ function onAmount(amountOfBoxes) {
 
 // Генерує рандомні кольори
 function getRandomColor() {
-  var letters = "0123456789ABCDEF";
-  var color = "#";
-  for (var i = 0; i < 6; i++) {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
   }
   return color;
@@ -46,7 +46,7 @@ function setHeight() {
 // Додає згенеровані div
 function createBoxes(amountOfBoxes) {
   for (let i = 0; i < amount; i++) {
-    let colorDiv = document.createElement("div");
+    const colorDiv = document.createElement("div");
     colorDiv.style.backgroundColor = getRandomColor();
     colorDiv.style.width = setWidth() + "px";
     colorDiv.style.height = setHeight() + "px";
@@ -57,8 +57,8 @@ function createBoxes(amountOfBoxes) {
 
 // Видаляє згенеровані div
 function destroyBoxes() {
-  let divs = document.querySelectorAll("#boxes > div");
-  for (let div of divs) {
+  const divs = document.querySelectorAll("#boxes > div");
+  for (const div of divs) {
     div.remove();
   }
 }
@@ -67,3 +67,7 @@ function destroyBoxes() {
 amountOfBoxes.addEventListener("input", onAmount);
 createButtonRef.addEventListener("click", createBoxes);
 destroyButtonRef.addEventListener("click", destroyBoxes);
+
+/*
+ * REFACTORING: Замінив let на const
+ */

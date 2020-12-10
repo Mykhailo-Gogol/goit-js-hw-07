@@ -7,12 +7,18 @@ const ingredients = [
   "Приправи",
 ];
 
-let rootContainerRef = document.querySelector("#ingredients");
-rootContainerRef.style.marginTop = "50px";
-rootContainerRef.style.marginBottom = "50px";
+ingredients.forEach((element) => {
+  const rootContainerRef = document.querySelector("#ingredients");
+  rootContainerRef.style.marginTop = "50px";
+  rootContainerRef.style.marginBottom = "50px";
 
-for (let i = 0; i < ingredients.length; i++) {
-  let itm = document.createElement("li");
-  itm.textContent = ingredients[i];
+  const itm = document.createElement("li");
+  itm.textContent = element;
   rootContainerRef.append(itm);
-}
+});
+
+/*
+ * REFACTORING: Замінив let на const
+ * REFACTORING: Замінив for на функциональний метод forEach
+ * REFACTORING: Виконав завдання з одну операцію
+ */

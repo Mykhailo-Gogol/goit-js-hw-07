@@ -17,23 +17,17 @@ const images = [
 ];
 
 const rootContainerRef = document.querySelector("#gallery");
-rootContainerRef.style.paddingTop = "50px";
-rootContainerRef.style.paddingBottom = "50px";
-rootContainerRef.style.listStyle = "none";
-rootContainerRef.style.display = "flex";
-rootContainerRef.style.justifyContent = "center";
-rootContainerRef.style.alignItems = "center";
-rootContainerRef.style.backgroundColor = "tomato";
+rootContainerRef.classList.add("gallery");
 
-for (let i = 0; i < images.length; i++) {
-  let { url, alt } = images[i];
-  let itm = document.createElement("li");
-  itm.style.marginRight = "20px";
-  let img = document.createElement("img");
-  img.setAttribute("src", url);
-  img.setAttribute("alt", alt);
-  img.style.width = "200px";
-  img.style.height = "auto";
-  itm.appendChild(img);
-  rootContainerRef.appendChild(itm);
-}
+images.forEach((e, index) => {
+  const { url, alt } = images[index];
+
+  const listItem = `<li><img src=${url} alt=${alt} width = "200" height = "auto" ></li>`;
+  rootContainerRef.insertAdjacentHTML("beforeend", listItem);
+});
+
+/*
+ * REFACTORING: Замінив let на const
+ * REFACTORING: Замінив for на функциональний метод forEach
+ * REFACTORING: Виконав завдання з одну операцію
+ */

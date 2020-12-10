@@ -26,3 +26,12 @@
   opacity: 1;
   transform: translateX(0%);
 }
+
+.gallery {
+  padding: 50px 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: tomato;
+}
