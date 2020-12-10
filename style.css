@@ -35,3 +35,7 @@
   align-items: center;
   background-color: tomato;
 }
+
+.gallery li {
+  margin-right: 50px;
+}
