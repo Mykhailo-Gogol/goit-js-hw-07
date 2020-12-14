@@ -1,9 +1,12 @@
+// Нодліст зоозбражень
 const images = document.querySelectorAll(".js-lazy-load img");
 
+// Додає марджин обзерверу
 const options = {
   rootMargin: "-50px",
 };
 
+// Відтворює при вході в viewport
 const onEntry = (entries, observer) => {
   console.log("Observed");
 
@@ -19,6 +22,8 @@ const onEntry = (entries, observer) => {
   });
 };
 
+// Створює обзервер
 const io = new IntersectionObserver(onEntry, options);
 
+// Підключає обзервер
 images.forEach((image) => io.observe(image));

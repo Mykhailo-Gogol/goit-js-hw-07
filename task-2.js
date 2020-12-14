@@ -6,16 +6,15 @@ const ingredients = [
   "Зелень",
   "Приправи",
 ];
+const rootContainerRef = document.querySelector("#ingredients");
 
-ingredients.forEach((element) => {
-  const rootContainerRef = document.querySelector("#ingredients");
-  rootContainerRef.style.marginTop = "50px";
-  rootContainerRef.style.marginBottom = "50px";
-
-  const itm = document.createElement("li");
-  itm.textContent = element;
-  rootContainerRef.append(itm);
+const arrayOfElements = ingredients.map((element) => {
+  const item = document.createElement("li");
+  item.textContent = element;
+  return item;
 });
+
+rootContainerRef.append(...arrayOfElements);
 
 /*
  * REFACTORING: Замінив let на const

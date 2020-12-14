@@ -3,14 +3,6 @@ const containerRef = document.querySelector("#boxes");
 const createButtonRef = document.querySelector("[data-action='render']");
 const destroyButtonRef = document.querySelector("[data-action='destroy']");
 const amountOfBoxes = document.querySelector("[type='number']");
-// console.log(createButtonRef);
-// console.log(destroyButtonRef);
-// console.log(amountOfBoxes);
-mainContinerRef.style.marginTop = "50px";
-mainContinerRef.style.marginBottom = "20px";
-
-containerRef.style.marginBottom = "100px";
-containerRef.style.display = "flex";
 
 //Додає змінні
 let amount = 0;
@@ -43,7 +35,7 @@ function setHeight() {
   return startHeight;
 }
 
-// Додає згенеровані div
+//Додає згенеровані div
 function createBoxes(amountOfBoxes) {
   for (let i = 0; i < amount; i++) {
     const colorDiv = document.createElement("div");

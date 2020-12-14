@@ -1,8 +1,7 @@
 const inputRef = document.querySelector("#validation-input");
-inputRef.style.outline = "none";
 
 const requiredLength = parseInt(inputRef.dataset.length);
-inputRef.addEventListener("change", onValidation);
+inputRef.addEventListener("blur", onValidation);
 
 function onValidation(element) {
   if (element.target.value.length === requiredLength) {
@@ -16,9 +15,6 @@ function onValidation(element) {
     inputRef.classList.remove("invalid");
   }
 }
-
-inputRef.style.marginTop = "50px";
-inputRef.style.marginBottom = "50px";
 
 /*
  * REFACTORING: Замінив подію з 'input' на 'change'

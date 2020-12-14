@@ -19,12 +19,14 @@ const images = [
 const rootContainerRef = document.querySelector("#gallery");
 rootContainerRef.classList.add("gallery");
 
-images.forEach((e, index) => {
+const arrayOfElements = images.map((e, index) => {
   const { url, alt } = images[index];
-
-  const listItem = `<li><img src=${url} alt=${alt} width = "200" height = "auto" ></li>`;
-  rootContainerRef.insertAdjacentHTML("beforeend", listItem);
+  return `<li><img src=${url} alt=${alt} width = "200" height = "auto" ></li>`;
 });
+
+const stringifyArray = arrayOfElements.join(" ");
+
+rootContainerRef.insertAdjacentHTML("beforeend", stringifyArray);
 
 /*
  * REFACTORING: Замінив let на const
