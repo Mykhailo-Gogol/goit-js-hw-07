@@ -8,6 +8,7 @@ const amountOfBoxes = document.querySelector("[type='number']");
 let amount = 0;
 let startWidth = 20;
 let startHeight = 20;
+let arrayOfBoxes = [];
 
 // Присвоює значення input amount-у
 function onAmount(amountOfBoxes) {
@@ -36,23 +37,23 @@ function setHeight() {
 }
 
 //Додає згенеровані div
-function createBoxes(amountOfBoxes) {
+function createBoxes() {
   for (let i = 0; i < amount; i++) {
     const colorDiv = document.createElement("div");
     colorDiv.style.backgroundColor = getRandomColor();
     colorDiv.style.width = setWidth() + "px";
     colorDiv.style.height = setHeight() + "px";
-    containerRef.appendChild(colorDiv);
+    arrayOfBoxes.push(colorDiv);
   }
-  console.log(amount);
+  containerRef.append(...arrayOfBoxes);
 }
 
 // Видаляє згенеровані div
 function destroyBoxes() {
-  const divs = document.querySelectorAll("#boxes > div");
-  for (const div of divs) {
-    div.remove();
-  }
+  containerRef.innerHTML = "";
+  arrayOfBoxes = [];
+  startWidth = 20;
+  startHeight = 20;
 }
 
 //Додає слухачів для input i Створити
